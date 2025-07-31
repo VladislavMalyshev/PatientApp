@@ -15,6 +15,12 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Spacing="10" Margin="5">
+            <Button Content="Patients" Command="{Binding ShowPatientsCommand}"/>
+            <Button Content="Procedures" Command="{Binding ShowProceduresCommand}"/>
+        </StackPanel>
+        <ContentControl Content="{Binding CurrentView}"/>
+    </DockPanel>
 
 </Window>
